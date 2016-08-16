@@ -1,7 +1,7 @@
 language: ruby
 
 env:
-  - TEST_RUBY=1 TEST_RUBY_VERSION=1.9.3
+  - TEST_RUBY_VERSION=1.9.3 TEST_USH=1
 
 before_install:
   - rvm list
