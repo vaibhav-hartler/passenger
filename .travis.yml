@@ -6,9 +6,9 @@ env:
 before_install:
   - rvm install rubygems 2.5.1 --force
   - gem -v
-  - rvm @default,@global do gem uninstall bundler || true
+  - rvm @default,@global do gem uninstall bundler -x || true
   - rvm @default,@global do gem install bundler --version 1.11.2 --no-document
-  - rvm ruby-1.9.3-p551@default,ruby-1.9.3-p551@global do gem uninstall bundler || true
+  - rvm ruby-1.9.3-p551@default,ruby-1.9.3-p551@global do gem uninstall bundler -x || true
   - rvm ruby-1.9.3-p551@default,ruby-1.9.3-p551@global do gem install bundler -v 1.11.2 --no-document
 
 install: "true"
