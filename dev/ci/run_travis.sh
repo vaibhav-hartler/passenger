@@ -199,10 +199,10 @@ if [[ "$TEST_USH" = 1 ]]; then
 	echo "$ Environment:"
 	env | grep -E '(RUBY|GEM)'
 
-	run bundle exec rake --version
+	run bundle exec bundle exec rake --version
 
 	pushd src/ruby_supportlib/phusion_passenger/vendor/union_station_hooks_core
-	run bundle exec rake --version
+	run bundle exec bundle exec rake --version
 	bundle exec rake spec:travis TRAVIS_WITH_SUDO=1
 	popd
 
