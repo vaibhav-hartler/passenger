@@ -194,12 +194,15 @@ fi
 if [[ "$TEST_USH" = 1 ]]; then
 	retry_run 3 rake_test_install_deps BASE_DEPS=yes USH_BUNDLES=yes
 	export PASSENGER_CONFIG="$PWD/bin/passenger-config"
-	run "$PASSENGER_CONFIG" install-standalone-runtime --auto
+	#run "$PASSENGER_CONFIG" install-standalone-runtime --auto
 
 	echo "$ Environment:"
 	env | grep -E '(RUBY|GEM)'
 
+	run bundle exec rake --version
+
 	pushd src/ruby_supportlib/phusion_passenger/vendor/union_station_hooks_core
+	run bundle exec rake --version
 	bundle exec rake spec:travis TRAVIS_WITH_SUDO=1
 	popd
 
