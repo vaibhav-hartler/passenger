@@ -1,7 +1,7 @@
 language: ruby
 
 env:
-  - TEST_RUBY_VERSION=1.9.3 TEST_USH=1
+  - TEST_RUBY_VERSION=2.2.5 TEST_USH=1
 
 before_install:
   - rvm @default,@global do gem uninstall bundler -x || true
