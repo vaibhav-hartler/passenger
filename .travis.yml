@@ -1,7 +1,7 @@
 language: ruby
 
 env:
-  - TEST_RUBY=1 TEST_RUBY_VERSION=1.9.3 TEST_USH=1
+  - TEST_RUBY=1 TEST_RUBY_VERSION=1.9.3
 
 before_install:
   - rvm list
@@ -11,9 +11,6 @@ before_install:
   - rvm @default,@global do gem install bundler --version 1.11.2 --no-document
   - rvm ruby-1.9.3-p551@default,ruby-1.9.3-p551@global do gem uninstall bundler -x || true
   - rvm ruby-1.9.3-p551@default,ruby-1.9.3-p551@global do gem install bundler -v 1.11.2 --no-document
-  - rvm-exec 1.9.3 bundle --version
-  - rvm-exec 1.9.3 bundle show
-  - false
 
 install: "true"
 script: ./dev/ci/run_travis.sh

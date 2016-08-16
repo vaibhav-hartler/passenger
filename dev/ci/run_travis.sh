@@ -188,6 +188,8 @@ fi
 
 if [[ "$TEST_RUBY" = 1 ]]; then
 	retry_run 3 rake_test_install_deps BASE_DEPS=yes
+	echo "$ Environment:"
+	env | grep -E '(RUBY|GEM)'
 	run bundle exec drake -j$COMPILE_CONCURRENCY test:ruby
 fi
 
